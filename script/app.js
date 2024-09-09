@@ -9,6 +9,7 @@ const verticalValue = document.getElementById("vertical-value");
 const blurValue = document.getElementById("blur-value");
 const spreadValue = document.getElementById("spread-value");
 const colorValue = document.getElementById("color-value");
+const boxShadowInfo = document.querySelector(".box-shadow-info");
 
 horizontalInput.addEventListener("input", updateShadow);
 verticalInput.addEventListener("input", updateShadow);
@@ -29,4 +30,5 @@ function updateShadow() {
   blurValue.textContent = blur;
   spreadValue.textContent = spread;
   colorValue.textContent = color;
+  boxShadowInfo.textContent = `box-shadow: ${horizontal}px ${vertical}px ${blur}px ${spread}px ${color};`;
 }
