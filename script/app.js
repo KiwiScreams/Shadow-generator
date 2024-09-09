@@ -11,12 +11,12 @@ blurInput.addEventListener('input', updateShadow);
 spreadInput.addEventListener('input', updateShadow);
 colorInput.addEventListener('input', updateShadow);
 
-function updateShadow() {
+function updateShadow()
+{
     const horizontal = parseInt(horizontalInput.value);
     const vertical = parseInt(verticalInput.value);
     const blur = parseInt(blurInput.value);
     const spread = parseInt(spreadInput.value);
     const color = colorInput.value;
-
     box.style.boxShadow = `${horizontal}px ${vertical}px ${blur}px ${spread}px ${color}`;
 }
