@@ -3,6 +3,7 @@ const verticalInput = document.getElementById("vertical");
 const blurInput = document.getElementById("blur");
 const spreadInput = document.getElementById("spread");
 const colorInput = document.getElementById("color");
+const boxColorInput = document.getElementById("box-color");
 const box = document.querySelector(".box");
 const horizontalValue = document.getElementById("horizontal-value");
 const verticalValue = document.getElementById("vertical-value");
@@ -16,6 +17,7 @@ verticalInput.addEventListener("input", updateShadow);
 blurInput.addEventListener("input", updateShadow);
 spreadInput.addEventListener("input", updateShadow);
 colorInput.addEventListener("input", updateShadow);
+boxColorInput.addEventListener("input", updateBoxColor);
 
 function updateShadow() {
   const horizontal = parseInt(horizontalInput.value);
@@ -31,4 +33,9 @@ function updateShadow() {
   spreadValue.textContent = spread;
   colorValue.textContent = color;
   boxShadowInfo.textContent = `box-shadow: ${horizontal}px ${vertical}px ${blur}px ${spread}px ${color};`;
+}
+
+function updateBoxColor() {
+  const boxColor = boxColorInput.value;
+  box.style.backgroundColor = boxColor;
 }
