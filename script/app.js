@@ -38,4 +38,8 @@ function updateShadow() {
 function updateBoxColor() {
   const boxColor = boxColorInput.value;
   box.style.backgroundColor = boxColor;
+  const rangeInputs = document.querySelectorAll('input[type="range"]');
+  rangeInputs.forEach((input) => {
+    input.style.accentColor = boxColor;
+  });
 }
