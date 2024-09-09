@@ -66,3 +66,12 @@ input[type="range"]
     padding: 5px;
     border-radius: 5px;
 }
+.box button
+{
+    border-radius: 10px;
+    background-color: transparent;
+    margin: 20px;
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid black;
+}

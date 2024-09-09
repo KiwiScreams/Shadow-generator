@@ -18,6 +18,7 @@ blurInput.addEventListener("input", updateShadow);
 spreadInput.addEventListener("input", updateShadow);
 colorInput.addEventListener("input", updateShadow);
 boxColorInput.addEventListener("input", updateBoxColor);
+const copyButton = document.getElementById("copy-button");
 
 function updateShadow() {
   const horizontal = parseInt(horizontalInput.value);
@@ -42,4 +43,21 @@ function updateBoxColor() {
   rangeInputs.forEach((input) => {
     input.style.accentColor = boxColor;
   });
+}
+
+copyButton.addEventListener("click", copyBoxShadowInfo);
+
+function copyBoxShadowInfo() {
+  const boxShadowText = boxShadowInfo.textContent;
+  navigator.clipboard
+    .writeText(boxShadowText)
+    .then(() => {
+      copyButton.textContent = "Copied!";
+      setTimeout(() => {
+        copyButton.textContent = "Copy";
+      }, 2000);
+    })
+    .catch((err) => {
+      console.error("Failed to copy box shadow info: ", err);
+    });
 }
